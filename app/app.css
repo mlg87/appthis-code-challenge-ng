@@ -75,3 +75,7 @@ header a {
 table {
   width: 100%;
 }
+
+tr {
+  text-align: left;
+}

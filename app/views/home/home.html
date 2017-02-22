@@ -1,0 +1,48 @@
+<div class="filter-container">
+  <div ng-repeat="f in filters" class="filter">
+
+    <div>
+      <label><b>{{ f.display.toUpperCase() }}</b></label>
+    </div>
+
+    <select ng-if="f.type === 'select'" ng-model="query[f.name]">
+      <option ng-repeat="o in f.options" value="{{o.val}}">{{ o.display.toUpperCase() || o.val }}</option>
+    </select>
+
+    <div ng-if="f.type === 'radio'">
+      <label ng-repeat="o in f.options">
+        <input type="radio" name="f.name" value="{{o}}" ng-model="query[f.name]"> {{ o.toUpperCase() }}
+      </label>
+    </div>
+  </div>
+</div>
+
+
+<button class="req-button" ng-click="getRequest()">Make Request</button>
+
+<table ng-if="records.length">
+  <thead>
+    <tr>
+      <th>NAME</th>
+      <th>EMAIL</th>
+      <th>CREATED</th>
+      <th>BALANCE</th>
+      <th>CITY</th>
+      <th>COUNTRY</th>
+      <th>STREET</th>
+      <th>ZIP</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="r in records">
+      <td>{{ r.name }}</td>
+      <td>{{ r.email }}</td>
+      <td>{{ formatDate(r.created) }}</td>
+      <td>${{ r.balance.toFixed(2) }}</td>
+      <td>{{ r.address.city }}</td>
+      <td>{{ r.address.country }}</td>
+      <td>{{ r.address.street }}</td>
+      <td>{{ r.address.zip }}</td>
+    </tr>
+  </tbody>
+</table>

@@ -23,3 +23,55 @@
   content: "|";
   padding-right: 0.3em;
 }
+
+/* my css */
+header {
+  height: 40px;
+  width: 100%;
+  display: block;
+  background-color: black;
+  color: white;
+  font-size: 30px;
+  padding: 20px;
+}
+
+header a {
+  color: white;
+  text-decoration: none;
+}
+
+.filter-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+.filter {
+  flex-grow: 1;
+  align-self: center;
+}
+
+.req-button {
+  width: 100%;
+  padding: 10px;
+  color: white;
+  background-color: gray;
+  border: 1px solid gray;
+  margin-bottom: 20px;
+}
+
+.req-button:hover {
+  color: gray;
+  background-color: white;
+}
+
+.req-button:focus {
+  outline: none;
+}
+
+table {
+  width: 100%;
+}
